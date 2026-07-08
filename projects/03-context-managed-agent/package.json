@@ -1,0 +1,11 @@
+{
+  "name": "@ai-agent-zero-to-hero/03-context-managed-agent",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  }
+}
