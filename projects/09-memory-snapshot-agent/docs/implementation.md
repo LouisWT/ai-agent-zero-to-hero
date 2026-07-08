@@ -12,11 +12,10 @@ npm run copy-forward -- 08-persistent-session-agent 09-memory-snapshot-agent
 2. Add `MemoryStore`.
 3. Parse `MEMORY.md` and `USER.md` with `§` delimiters.
 4. Render memory blocks with usage headers.
-5. Inject blocks through `ContextBuilder`.
+5. Inject blocks as a named `ContextBuilder` layer, not by mutating ad hoc system prompt strings.
 6. Add `/memory show`.
 7. Test frozen snapshot behavior.
 
 ## Done when
 
 Manual memory file edits appear after a new session starts, not by mutating the active snapshot.
-

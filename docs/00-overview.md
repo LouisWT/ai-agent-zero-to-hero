@@ -8,7 +8,7 @@ The initial scaffold intentionally implements only `00-minimal-chat-agent`. Proj
 
 - Agent conversation loop
 - Provider runtime
-- Context builder
+- Context builder and prompt layer management
 - Tool registry and tool loop
 - File/shell tools with safety boundaries
 - Session persistence and search
@@ -18,4 +18,3 @@ The initial scaffold intentionally implements only `00-minimal-chat-agent`. Proj
 - Cron/scheduled jobs
 - Gateway/API entrypoints
 - Delegation/subagents
-

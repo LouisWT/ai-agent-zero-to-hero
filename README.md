@@ -10,7 +10,7 @@ This repository is scaffold-first: the initial version provides the course map, 
 | --- | --- |
 | `00-minimal-chat-agent` | Minimal runnable chat agent with `Message`, `Agent`, and `MockProvider`. |
 | `01-real-provider-agent` | Add provider runtime and OpenAI-compatible model support. |
-| `02-interactive-conversation-agent` | Add interactive REPL and conversation history. |
+| `02-interactive-conversation-agent` | Add interactive REPL, conversation history, and streaming output. |
 | `03-context-managed-agent` | Add context builder, system prompt layering, and context budget. |
 | `04-tool-using-agent` | Add first tool schemas, registry, validation, and tool loop. |
 | `05-robust-tool-agent` | Add structured tool errors and visible tool events. |
@@ -45,4 +45,3 @@ npm run --workspace @ai-agent-zero-to-hero/00-minimal-chat-agent dev -- "hello a
 5. Move to the next project.
 
 See `docs/03-copy-forward-workflow.md` for details.
-
