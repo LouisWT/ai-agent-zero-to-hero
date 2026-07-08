@@ -48,6 +48,7 @@ if (fromDir === toDir) {
 
 const requiredItems = ["package.json", "tsconfig.json", "src", "tests"];
 const optionalItems = [".env.example"];
+const localOnlyItems = [".env"];
 const missingRequiredItems = requiredItems.filter((item) => !existsSync(path.join(fromDir, item)));
 
 if (missingRequiredItems.length > 0) {
@@ -57,15 +58,29 @@ if (missingRequiredItems.length > 0) {
   process.exit(1);
 }
 
-for (const item of [...requiredItems, ...optionalItems]) {
+function copyItem(item, { force }) {
   const source = path.join(fromDir, item);
   const target = path.join(toDir, item);
   if (!existsSync(source)) {
-    continue;
+    return;
   }
+
+  if (!force && existsSync(target)) {
+    console.log(`Skipped ${path.relative(root, target)} because it already exists`);
+    return;
+  }
+
   mkdirSync(path.dirname(target), { recursive: true });
-  cpSync(source, target, { recursive: true, force: true });
+  cpSync(source, target, { recursive: true, force });
   console.log(`Copied ${path.relative(root, source)} -> ${path.relative(root, target)}`);
+}
+
+for (const item of [...requiredItems, ...optionalItems]) {
+  copyItem(item, { force: true });
+}
+
+for (const item of localOnlyItems) {
+  copyItem(item, { force: false });
 }
 
 console.log("Copy-forward complete. README.md and docs/ were left untouched.");

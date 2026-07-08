@@ -15,7 +15,8 @@ The copy script copies executable harness files such as:
 - `src/`
 - `tests/`
 - `.env.example` when present
+- `.env` when present, for local convenience only
 
-It does not overwrite the target project's README or docs.
+It does not overwrite the target project's README or docs. It also does not overwrite an existing target `.env`; local secrets should stay ignored by git and should not be committed.
 
 After copying, follow the target project's `docs/implementation.md`.
