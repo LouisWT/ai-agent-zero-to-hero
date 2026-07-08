@@ -1,0 +1,25 @@
+{
+  "name": "ai-agent-zero-to-hero",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "projects/*"
+  ],
+  "scripts": {
+    "check:structure": "node scripts/check-structure.mjs",
+    "copy-forward": "node scripts/copy-forward.mjs",
+    "test:implemented": "npm --workspaces --if-present test",
+    "typecheck:implemented": "npm --workspaces --if-present run typecheck",
+    "test": "npm run check:structure && npm run test:implemented"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
+
